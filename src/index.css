@@ -1,0 +1,118 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  monospace;
+}
+
+nav {
+  background-color: #764abc
+}
+
+.order-list {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  flex-direction: row-reverse;
+}
+
+.material-icons {
+  font-size: 2.4em;
+  cursor: pointer;
+}
+
+.btn {
+  height: auto;
+  display: flex;
+}
+
+.btn i {
+  margin-left: 5px;
+  background-color: transparent;
+}
+
+.card {
+  margin: 10px;
+  padding: 7px;
+  width: 300px;
+  flex: 1 1 auto;
+}
+
+.card .card-content {
+  padding: 25px;
+}
+
+.card .card-content .order {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card .card-image .card-title {
+  padding: 10px 10px;
+  width: 100%;
+  background-color: rgba(250, 235, 215, 0.81);
+  color: black;
+  font-weight: 400;
+}
+
+.cart {
+  margin-top: 40px;
+}
+
+.collection .collection-item {
+  display: flex;
+}
+
+.collection .collection-item.avatar {
+  padding-left: 20px;
+}
+
+.collection-item.avatar .title {
+  font-size: 20px;
+  font-weight: 500;
+  display: block;
+  margin-bottom: 20px;
+}
+
+.collection .collection-item img {
+  width: 130px;
+  margin-right: 25px;
+}
+
+.cart .collection {
+  padding: 5px;
+}
+
+span.badge.round {
+  width: auto;
+  min-width: 1.5rem;
+  border-radius: 30px;
+}
+
+.checkout {
+  margin-bottom: 20px;
+}
+
+.item-add-remove {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex: 1 1 auto;
+}
+
+.add-remove {
+  display: flex;
+}
+
+.add-remove i {
+  margin: 4px 15px;
+  font-size: 1rem;
+}
