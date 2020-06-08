@@ -1,14 +1,20 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { addItem, products } from '../cart/cartSlice';
+import { addItem, selectCartItems, selectProducts } from '../cart/cartSlice';
 
 export const ProductList = () => {
-  const shopProducts = useSelector(products);
+  const shopProducts = useSelector(selectProducts);
+  const itemsInCart = useSelector(selectCartItems);
   const dispatch = useDispatch();
 
   const handleClick = (id) => {
     dispatch(addItem({ id }));
+  }
+
+  const inCart = (id) => {
+    const inCart = itemsInCart.filter(item => item.id === id).length;
+    return inCart === 0 ? <> Add<i className="material-icons">add</i></> : <>Added</>;
   }
 
   return (
@@ -27,7 +33,7 @@ export const ProductList = () => {
                 <p><b>Price: £{item.price}</b></p>
                 <span to="/" className="btn waves-effect waves-light" onClick={() => {
                   handleClick(item.id)
-                }}>Add <i className="material-icons">add</i></span>
+                }}>{inCart(item.id)}</span>
               </div>
             </div>
           </div>

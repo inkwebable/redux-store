@@ -6,6 +6,7 @@ import './App.css';
 import Cart from './pages/Cart';
 import Home from './pages/Home';
 import Navbar from './features/nav/Navbar';
+import Checkout from './pages/Checkout';
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Switch>
           <Route exact path="/" component={Home}/>
           <Route path="/cart" component={Cart}/>
+          <Route path="/checkout" component={Checkout}/>
         </Switch>
       </div>
     </Router>

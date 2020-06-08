@@ -1,18 +1,17 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
 
-import { increaseQuantity, cartItems, reduceQuantity, removeItem } from './cartSlice';
+import { increaseQuantity, selectCartItems, reduceQuantity, removeItem } from './cartSlice';
 
-export const CartSummary = () => {
-  const items = useSelector(cartItems);
+export const CartSummary = ({changeQuantity = true, removeItems = true}) => {
+  const cartItems = useSelector(selectCartItems);
   const dispatch = useDispatch();
 
   return (
     <ul className="collection">
-      {items.length
+      {cartItems.length
         ? (
-          items.map(item => (
+          cartItems.map(item => (
               <li className="collection-item avatar" key={item.id}>
                 <div className="item-img">
                   <img src={item.img} alt={item.img} className=""/>
@@ -26,19 +25,23 @@ export const CartSummary = () => {
                   </p>
                 </div>
                 <div className="item-add-remove">
-                  <div className="add-remove">
+                  {changeQuantity && (
+                    <div className="add-remove">
                     <span><i className="material-icons" onClick={() => {
                       dispatch(reduceQuantity({ id: item.id }))
                     }}>remove</i></span>
-                    <span><b>{item.quantity}</b></span>
-                    <span><i className="material-icons" onClick={() => {
-                      dispatch(increaseQuantity({ id: item.id }))
-                    }}>add</i></span>
-                  </div>
-                  <button className="waves-effect waves-light btn pink remove" onClick={() => {
-                    dispatch(removeItem({ id: item.id }))
-                  }}>Remove
-                  </button>
+                      <span><b>{item.quantity}</b></span>
+                      <span><i className="material-icons" onClick={() => {
+                        dispatch(increaseQuantity({ id: item.id }))
+                      }}>add</i></span>
+                    </div>
+                  )}
+                  {removeItems && (
+                    <button className="waves-effect waves-light btn pink remove" onClick={() => {
+                      dispatch(removeItem({ id: item.id }))
+                    }}>Remove
+                    </button>
+                  )}
                 </div>
               </li>
             )

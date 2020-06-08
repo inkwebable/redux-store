@@ -1,10 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom'
 import { useSelector } from 'react-redux';
-import { totalItems } from '../cart/cartSlice';
+import { selectTotalCartItems } from '../cart/cartSlice';
 
 const Navbar = () => {
-  const basketCount = useSelector(totalItems);
+  const basketCount = useSelector(selectTotalCartItems);
 
   return (
     <nav>

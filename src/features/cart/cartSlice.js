@@ -99,9 +99,9 @@ export const cartSlice = createSlice({
 
 export const { addItem, removeItem, increaseQuantity, reduceQuantity, addShipping, removeShipping } = cartSlice.actions;
 
-export const cartItems = state => state.cart.addedItems;
-export const products = state => state.cart.products;
-export const cartTotal = state => state.cart.total;
-export const totalItems = state => state.cart.addedItems.reduce((acc, item) => acc + item.quantity, 0);
+export const selectCartItems = state => state.cart.addedItems;
+export const selectProducts = state => state.cart.products;
+export const selectCartTotal = state => state.cart.total;
+export const selectTotalCartItems = state => state.cart.addedItems.reduce((acc, item) => acc + item.quantity, 0);
 
 export default cartSlice.reducer;
