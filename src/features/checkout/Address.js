@@ -11,7 +11,7 @@ const Address = ({subTitle = 'Your', showShipping = true, address, handleSave}) 
   const dispatch = useDispatch();
 
   const valid = () => {
-    return (addressLine1.length > 0 && addressLine2.length > 0 && postcode.length > 0);
+    return (addressLine1.length > 0 && addressLine3.length > 0 && postcode.length > 0);
   }
 
   useEffect(() => {
@@ -61,7 +61,7 @@ const Address = ({subTitle = 'Your', showShipping = true, address, handleSave}) 
         </div>
         <div>
           <label htmlFor="address-line-2">Address Line 2</label>
-          <input type="text" name="address-line-2" value={addressLine2} onChange={(e) => setAddressLine2(e.target.value)} required disabled={!editing} />
+          <input type="text" name="address-line-2" value={addressLine2} onChange={(e) => setAddressLine2(e.target.value)} disabled={!editing} />
         </div>
         <div>
           <label htmlFor="address-line-3">Address Line 3</label>

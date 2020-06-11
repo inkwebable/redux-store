@@ -44,7 +44,7 @@ const Checkout = () => {
               <CartSummary changeQuantity={false} removeItems={false}/>
               <CartShipping/>
               <CartTotal/>
-              <button className="waves-effect waves-light btn" disabled={!disablePayBtn}>Pay</button>
+              <button className="waves-effect waves-light btn" disabled={!disablePayBtn} onClick={() => alert('You would be taken a payment gateway, but there isn\'t one for this demo.')}>Pay</button>
             </div>
           </div>
         </div>
