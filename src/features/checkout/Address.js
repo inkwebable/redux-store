@@ -25,7 +25,7 @@ const Address = ({subTitle = 'Your', showShipping = true, address, handleSave}) 
         setUseAsShipping(address.useAsShipping)
       }
     }
-  }, [address, editing])
+  }, [address, editing, showShipping])
 
   const handleSubmit = (e) => {
     e.preventDefault();
