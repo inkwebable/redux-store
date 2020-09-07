@@ -16,13 +16,13 @@ stages:
     - task: Npm@1
       displayName: 'npm install'
       inputs:
-        workingDir: 'my-app'
+        workingDir: '\'
         command: install
 
     - task: Npm@1
       displayName: 'npm build'
       inputs:
-        workingDir: 'my-app'
+        workingDir: '\'
         command: custom
         customCommand: run-script build
         
@@ -30,7 +30,7 @@ stages:
     - task: CopyFiles@2
       displayName: 'Copy Files'
       inputs:
-        SourceFolder: 'my-app\build'
+        SourceFolder: '\build'
         TargetFolder: '$(build.artifactstagingdirectory)'
         CleanTargetFolder: true
 
