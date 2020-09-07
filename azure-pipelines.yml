@@ -57,7 +57,7 @@ stages:
           - task: AzureFileCopy@3
             inputs:
               sourcePath: $(Pipeline.Workspace)/build
-              azureSubscription: 'react-test'
+              azureSubscription: 'first-service-connection'
               destination: azureBlob
               storage: $(storageaccountname)
               containerName: "$web"
